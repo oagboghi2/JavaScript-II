@@ -93,12 +93,28 @@ console.log(ticketPriceTotal);
 //filter out runners based on their email choice
 
 let yahooBlock = [];
-let reg = \[]-_@/gi;
+//let reg = \[]-_@/gi;
 yahooBlock = runners.filter((element) => {
-    return element["email"] === reg;
+    var idx =element["email"].indexOf('@yahoo.com');
+    if (idx > -1) {
+        return true;
+        // true if the address contains yahoo.com
+    }
+    console.log(idx)
 })
 console.log(yahooBlock); 
 
+
+
+
 // Problem 2
+SmallDonations = [];
+runners.forEach((element) => {
+    if(element["donation"] < 100){
+        SmallDonations.push(element["donation"]);
+    }
+})
+console.log(SmallDonations);
 
 // Problem 3
+
